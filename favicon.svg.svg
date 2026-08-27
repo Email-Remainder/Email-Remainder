@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background Shield/Rounded Tile -->
+  <rect width="512" height="512" rx="128" fill="#0f172a"/>
+  
+  <!-- Outer Glow / Accent Ring -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="#1e293b" stroke-width="12"/>
+
+  <!-- Envelope Icon -->
+  <g fill="none" stroke="#f8fafc" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Envelope Body -->
+    <rect x="80" y="140" width="352" height="240" rx="32" fill="#1e293b" stroke="#38bdf8"/>
+    <!-- Envelope Flap -->
+    <path d="M 80 156 L 256 290 L 432 156" stroke="#38bdf8"/>
+  </g>
+
+  <!-- Timer / Reminder Badge (Bottom Right Accent) -->
+  <circle cx="360" cy="360" r="96" fill="#0f172a"/>
+  <circle cx="360" cy="360" r="80" fill="#f59e0b"/>
+  <!-- Clock Hands -->
+  <path d="M 360 308 V 360 L 396 378" stroke="#0f172a" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
