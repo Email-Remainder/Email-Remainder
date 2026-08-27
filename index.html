@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Email Inactivity Survival Guide — Official Policies</title>
+<meta name="description" content="Official-source guide to inactivity limits, rescue windows, definitions of activity, consequences, quotations and links for 11 email providers.">
+<style>
+:root{
+  --bg:#f2f5f9; --panel:#fff; --ink:#182235; --muted:#66758a; --line:#dfe6ee;
+  --blue:#2b5fd7; --blue-soft:#edf2ff; --red:#b42318; --red-soft:#fff0ee;
+  --amber:#945800; --amber-soft:#fff5e5; --green:#126449; --green-soft:#eaf8f1;
+  --gray:#5d6674; --gray-soft:#edf0f4; --shadow:0 18px 55px rgba(24,34,53,.08)
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#f8fafc 0,#eef2f7 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:auto;padding:26px}
+.hero{border:1px solid var(--line);border-radius:28px;padding:42px;background:radial-gradient(circle at 86% 10%,#dbe7ff 0,#eef3ff 27%,#fff 67%);box-shadow:var(--shadow)}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:850;color:var(--blue)}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.035em;margin:12px 0 16px}
+.lead{font-size:18px;color:#4e5d72;max-width:980px}
+.asof{display:inline-flex;margin-top:14px;padding:8px 12px;border-radius:999px;background:#f1f5ff;border:1px solid #d5dff7;color:#294fae;font-size:13px;font-weight:800}
+.section{margin-top:30px}
+h2{font-size:28px;line-height:1.15;letter-spacing:-.02em;margin:0 0 10px}
+.intro{color:var(--muted);max-width:980px}
+.callout{background:#f6f8ff;border:1px solid #cfdbf7;border-radius:18px;padding:20px;margin-top:16px}
+.callout .big{font-size:22px;font-weight:900;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 25px rgba(25,38,58,.04)}
+.stat strong{display:block;font-size:27px;letter-spacing:-.03em}
+.stat span{font-size:12px;color:var(--muted)}
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px}
+.tick{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px}
+.tick strong{display:block;font-size:19px}
+.tick small{color:var(--muted)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow);margin-top:16px}
+table{border-collapse:collapse;width:100%;min-width:1120px}
+th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{position:sticky;top:0;background:#f8fafc;color:#5d6a7c;font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+tbody tr:hover{background:#fafcff}
+.pill,.badge{display:inline-flex;align-items:center;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.05em}
+.pill{padding:4px 8px} .badge{padding:5px 9px}
+.critical{color:var(--red);background:var(--red-soft)} .high{color:var(--amber);background:var(--amber-soft)} .safe{color:var(--green);background:var(--green-soft)} .unspecified{color:var(--gray);background:var(--gray-soft)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.card{background:#fff;border:1px solid var(--line);border-left:5px solid #8a94a4;border-radius:18px;padding:20px;box-shadow:0 8px 27px rgba(25,38,58,.04)}
+.card.critical{border-left-color:var(--red)} .card.high{border-left-color:#c46a00} .card.safe{border-left-color:var(--green)} .card.unspecified{border-left-color:#7d8490}
+.card-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+.provider{font-size:21px;font-weight:900;letter-spacing:-.02em}
+.domain{font-size:12px;color:var(--muted);margin-top:1px}
+.limit{font-size:19px;font-weight:900;margin:12px 0}
+.label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:900;margin-top:12px}
+.card p{margin:5px 0;color:#455267}
+blockquote{margin:7px 0 0;padding:13px 14px;border-radius:12px;background:#f6f7f9;border:1px solid #e6e9ee;font:italic 15px/1.55 Georgia,serif;color:#3a4557}
+.source{font-size:13px;margin-top:9px}
+.note{font-size:13px;color:#596678;margin-top:10px}
+.steps{display:grid;gap:10px;margin-top:16px}
+.step{display:grid;grid-template-columns:38px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--blue-soft);color:#2b50ad;font-weight:900}
+.step h3{margin:0 0 4px;font-size:17px}
+.step p{margin:0;color:#4e5b70}
+.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.source-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px;display:grid;gap:5px}
+.footer{text-align:center;color:var(--muted);font-size:12px;margin:34px 0 12px}
+.warn{font-size:13px;color:#5b6677}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:repeat(3,1fr)}.cards,.sources{grid-template-columns:1fr}}
+@media(max-width:620px){.wrap{padding:14px}.hero{padding:25px}.stats{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}}
+@media print{body{background:#fff}.hero,.stat,.card,.table-wrap,.step,.source-card{box-shadow:none}a{color:#000;text-decoration:underline}.no-print{display:none!important}}
+
+/* ===== Added features (nav, dark mode, search, calculator, back-to-top) ===== */
+:root[data-theme="dark"]{
+  --bg:#0d1117; --panel:#141b26; --ink:#e6edf6; --muted:#93a1b5; --line:#26303f;
+  --blue:#6f9bff; --blue-soft:#152140; --red:#ff8a80; --red-soft:#3a1613;
+  --amber:#ffc266; --amber-soft:#3a2a0a; --green:#7ee0b5; --green-soft:#0f2e22;
+  --gray:#9aa6b6; --gray-soft:#1b2230; --shadow:0 18px 55px rgba(0,0,0,.45)
+}
+:root[data-theme="dark"] body{background:linear-gradient(180deg,#0b0f16 0,#0d1420 100%);color:var(--ink)}
+:root[data-theme="dark"] .hero{background:radial-gradient(circle at 86% 10%,#182241 0,#121a2c 27%,#0d1117 67%);border-color:var(--line)}
+:root[data-theme="dark"] .asof{background:#131c33;border-color:#233257;color:#a9c1ff}
+:root[data-theme="dark"] .stat,:root[data-theme="dark"] .table-wrap,:root[data-theme="dark"] .card,:root[data-theme="dark"] .step,:root[data-theme="dark"] .source-card,:root[data-theme="dark"] .tick{background:var(--panel)}
+:root[data-theme="dark"] th{background:#101724;color:#9fb0c8}
+:root[data-theme="dark"] tbody tr:hover{background:#161f2e}
+:root[data-theme="dark"] blockquote{background:#101724;border-color:#233047;color:#c4d0e2}
+:root[data-theme="dark"] .callout{background:#101c39;border-color:#28407a}
+
+.topnav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(255,255,255,.78);border-bottom:1px solid var(--line);margin:-26px -26px 26px;padding:12px 26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+:root[data-theme="dark"] .topnav{background:rgba(13,17,23,.82)}
+.topnav .brand{font-weight:900;font-size:14px;letter-spacing:-.01em;white-space:nowrap}
+.topnav nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.topnav nav a{font-size:13px;font-weight:700;color:var(--muted);padding:7px 10px;border-radius:8px;white-space:nowrap}
+.topnav nav a:hover{background:var(--gray-soft);text-decoration:none;color:var(--ink)}
+.icon-btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:8px 12px;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap}
+.icon-btn:hover{background:var(--gray-soft)}
+
+.searchbar{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.searchbar input[type="search"]{flex:1;min-width:220px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:14px}
+.searchbar select{padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:13px;font-weight:700}
+.result-count{font-size:12px;color:var(--muted);margin-top:8px}
+.card[hidden],tbody tr[hidden]{display:none!important}
+.no-results{display:none;padding:26px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px;margin-top:14px}
+
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;align-items:end}
+.calc label{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:6px}
+.calc input,.calc select{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:14px}
+.calc-result{grid-column:1/-1;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:15px}
+.calc-result strong{font-size:18px}
+
+.totop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;border:none;display:none;place-items:center;cursor:pointer;box-shadow:0 10px 25px rgba(43,95,215,.4);font-size:18px;z-index:60}
+.totop.show{display:grid}
+.copy-link{background:none;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 6px;border-radius:6px}
+.copy-link:hover{background:var(--gray-soft);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="topnav no-print">
+  <span class="brand">📬 Email Inactivity Guide</span>
+  <nav>
+    <a href="#top">Top</a>
+    <a href="#compare">Compare</a>
+    <a href="#providers">Providers</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#strategy">Strategy</a>
+    <a href="#sources">Sources</a>
+  </nav>
+  <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">🌙 Dark mode</button>
+  <button class="icon-btn" id="printBtn" type="button" aria-label="Print or save as PDF">🖨️ Print / PDF</button>
+</div>
+
+<div class="wrap">
+
+<header class="hero" id="top">
+  <div class="kicker">Official-source reference · free / freemium accounts</div>
+  <h1>Email Inactivity<br>Survival Guide</h1>
+  <p class="lead">A clean, ordered reference for <strong>11 email providers</strong>. The central question is simple: <strong>before the final inactivity point, can I save the account just by logging in?</strong> This guide preserves the providers' actual wording, including where a deadline is discretionary or where no fixed deadline is published.</p>
+  <div class="asof">Official pages checked · 27 August 2026</div>
+</header>
+
+<section class="section">
+  <h2>Executive answer</h2>
+  <div class="callout">
+    <div class="kicker">Best universal maintenance rule</div>
+    <div class="big">Log into every account at least once every 5 months.</div>
+    <p class="warn">This is a conservative operating interval, not a claim that every provider deletes at five months. It gives you a buffer ahead of <strong>Tuta's six-month no-login deadline</strong>, the strictest fixed deadline in this group.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>5 months</strong><span>Your recommended recurring check</span></div>
+    <div class="stat"><strong>6 months</strong><span>Tuta: free-account no-login threshold</span></div>
+    <div class="stat"><strong>7 + 5 months</strong><span>Mailfence: suspension → deletion</span></div>
+    <div class="stat"><strong>24 months</strong><span>Aster: free-account deletion threshold</span></div>
+  </div>
+  <div class="timeline">
+    <div class="tick"><strong>5 mo</strong><small>Maintenance target</small></div>
+    <div class="tick"><strong>6 mo</strong><small>Tuta deletion point</small></div>
+    <div class="tick"><strong>7 mo</strong><small>Mailfence suspension</small></div>
+    <div class="tick"><strong>12 mo</strong><small>Proton / A/I thresholds</small></div>
+    <div class="tick"><strong>24 mo</strong><small>Google / Aster thresholds</small></div>
+    <div class="tick"><strong>No fixed timer*</strong><small>Disroot / Atomic / Murena</small></div>
+  </div>
+</section>
+
+<section class="section" id="compare">
+  <h2>Master comparison</h2>
+  <p class="intro">“Limit” is the current published provider rule. Aster, Secria, Murena and others require careful wording; this guide does not convert a discretionary clause into a fake automatic deadline.</p>
+  <div class="searchbar no-print">
+    <input type="search" id="tableSearch" placeholder="Search providers (e.g. Proton, Gmail, 6 months)…" aria-label="Search providers">
+    <select id="riskFilter" aria-label="Filter by risk level">
+      <option value="">All risk levels</option>
+      <option value="critical">Critical</option>
+      <option value="high">High</option>
+      <option value="safe">Safe</option>
+      <option value="unspecified">Unspecified</option>
+    </select>
+  </div>
+  <p class="result-count no-print" id="tableCount"></p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Provider</th><th>Inactivity limit</th><th>What counts / definition</th><th>After limit</th><th>Best rescue point</th><th>Risk</th></tr></thead>
+      <tbody><tr class="datarow" data-risk="critical">
+      <td><strong>1. Tuta Mail</strong></td>
+      <td><strong>6 months</strong></td>
+      <td>Official wording is specifically about not logging in for more than six months.</td>
+      <td>Free account is deleted; its contents are permanently deleted. The address is not recycled. The deleted address can still be reused as an alias/user on a paid account if you still have the correct credentials for the deleted account.</td>
+      <td>Before deletion: log in. After deletion: mailbox data are gone; only the address may be reusable on a paid account under Tuta&#x27;s credential requirement.</td>
+      <td><span class="pill critical">CRITICAL</span></td>
+    </tr><tr class="datarow" data-risk="critical">
+      <td><strong>2. Zoho Mail</strong></td>
+      <td><strong>180 days (6 months) → 90-day grace</strong></td>
+      <td>Mailbox is inactive after 180 consecutive days with no access through web, IMAP, POP, mobile app, or desktop client.</td>
+      <td>At 180 days the mailbox is blocked from sending/receiving and warning notices begin. If you do not reactivate during the following 90 days, mailbox data are permanently deleted at 300 days total.</td>
+      <td>Log in by any supported mailbox access method during the 90-day grace period. After clearance, emails/data cannot be restored.</td>
+      <td><span class="pill critical">CRITICAL</span></td>
+    </tr><tr class="datarow" data-risk="high">
+      <td><strong>3. Proton Mail</strong></td>
+      <td><strong>12 months</strong></td>
+      <td>Free account must be kept active by signing in and using any Proton service at least once a year. Opening an email, viewing a file, or connecting to a VPN server counts as an example of activity.</td>
+      <td>After 12+ consecutive months of inactivity, Proton may delete the account and associated data. Warnings are sent 30, 15, and 7 days before scheduled deletion.</td>
+      <td>Log in and use a Proton service before deletion. After deletion, associated data are permanently removed; the address generally cannot be recovered.</td>
+      <td><span class="pill high">HIGH</span></td>
+    </tr><tr class="datarow" data-risk="high">
+      <td><strong>4. Autistici/Inventati</strong></td>
+      <td><strong>365 days (12 months)</strong></td>
+      <td>Official FAQ says accounts not used for 365 days are automatically deactivated. The Terms say A/I reserves the right to delete an account and associated data after inactivity of at least 12 months.</td>
+      <td>The FAQ says an account may be deactivated and can be requested for re-activation. The Terms reserve the right to delete the account and associated data at ≥12 months. The official FAQ does not support a blanket claim that all mailbox data are always immediately erased upon deactivation.</td>
+      <td>If deactivated, the official FAQ says to email support from a different address and ask for re-activation. Do not assume recovery is guaranteed after deletion.</td>
+      <td><span class="pill high">HIGH</span></td>
+    </tr><tr class="datarow" data-risk="high">
+      <td><strong>5. Mailfence</strong></td>
+      <td><strong>7 months → +5 months until permanent deletion</strong></td>
+      <td>Free accounts are suspended after seven months of inactivity.</td>
+      <td>The account is then totally deleted five months later. That makes the practical permanent-deletion point about 12 months from last activity.</td>
+      <td>During suspension, Mailfence says you can reactivate by upgrading to a paid plan. After permanent deletion, recovery is not available.</td>
+      <td><span class="pill high">HIGH</span></td>
+    </tr><tr class="datarow" data-risk="safe">
+      <td><strong>6. Disroot Mail</strong></td>
+      <td><strong>No current inactivity expiration</strong></td>
+      <td>Disroot&#x27;s current Terms explicitly say unused accounts do not expire.</td>
+      <td>There is currently no inactivity-triggered deletion deadline. Disroot warns the policy could change if storage pressure forces a change, with advance notice.</td>
+      <td>No inactivity rescue action is currently required. Still maintain your credentials and backups.</td>
+      <td><span class="pill safe">SAFE</span></td>
+    </tr><tr class="datarow" data-risk="unspecified">
+      <td><strong>7. Murena Mail</strong></td>
+      <td><strong>No published inactivity deadline found</strong></td>
+      <td>I found no official Murena rule that says a free Mail/Workspace account is deleted after X months simply because you did not log in.</td>
+      <td>A separate official rule says a newly created Murena Workspace account is disabled and then deleted after 30 days if you do not set and verify a recovery email. That is a recovery-email requirement, not an inactivity timer.</td>
+      <td>Set and verify the recovery email during account creation. Do not misread the 30-day rule as a 30-day inactivity policy.</td>
+      <td><span class="pill unspecified">UNSPECIFIED</span></td>
+    </tr><tr class="datarow" data-risk="unspecified">
+      <td><strong>8. Secria Mail</strong></td>
+      <td><strong>2+ years cited as prolonged inactivity</strong></td>
+      <td>Current Terms list prolonged inactivity as a ground for suspension/termination, giving &#x27;2+ years without login&#x27; as an example.</td>
+      <td>Secria may suspend or terminate. On termination, access and services cease, and stored data may be deleted. The Terms do not state that deletion automatically occurs exactly at 24 months.</td>
+      <td>Best practice is to log in well before two years; do not treat 24 months as a guaranteed grace period because the wording is discretionary.</td>
+      <td><span class="pill unspecified">UNSPECIFIED</span></td>
+    </tr><tr class="datarow" data-risk="safe">
+      <td><strong>9. Atomic Mail</strong></td>
+      <td><strong>No strict inactivity deletion policy</strong></td>
+      <td>Atomic Mail currently says it does not have a strict policy for deleting accounts due to inactivity. It recommends logging in at least once a year.</td>
+      <td>No fixed inactivity-based deletion schedule is currently published in its FAQ.</td>
+      <td>No fixed inactivity rescue deadline currently exists in the official FAQ. Still retain your recovery seed phrase and credentials.</td>
+      <td><span class="pill safe">SAFE</span></td>
+    </tr><tr class="datarow" data-risk="high">
+      <td><strong>10. Aster Mail</strong></td>
+      <td><strong>24 months</strong></td>
+      <td>Free accounts are treated as inactive after 24 consecutive months without use. Aster counts web, desktop, mobile, Bridge, and API activity.</td>
+      <td>At 24 months, the account is permanently purged. Warnings are sent at 12, 20, and 23 months. The address is permanently retired and not reassigned.</td>
+      <td>Log in/use any supported access method before the 24-month mark. After permanent purge, recovery is not possible.</td>
+      <td><span class="pill high">HIGH</span></td>
+    </tr><tr class="datarow" data-risk="high">
+      <td><strong>11. Gmail / Google Account</strong></td>
+      <td><strong>2 years</strong></td>
+      <td>A personal Google Account is inactive if it has not been used within a two-year period. Activity can include Gmail, Drive, YouTube, Search, sharing photos, app downloads, or Sign in with Google.</td>
+      <td>Google may delete the inactive Google Account and its content/data. Google sends notifications to the account and recovery email before this happens. Separate Google product policies may also apply.</td>
+      <td>Use the specific Google Account before two years elapse. Activity is measured by account, not device.</td>
+      <td><span class="pill high">HIGH</span></td>
+    </tr></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What “inactivity” means</h2>
+  <p class="intro">There is no universal industry definition. The provider decides which event resets its timer. The safest common practice is <strong>an actual sign-in and/or mailbox use</strong>, not merely assuming that receiving an email is enough.</p>
+  <div class="cards">
+    <article class="card safe">
+      <div class="provider">Clearly defined activity</div>
+      <div class="label">Google</div>
+      <p>Google counts account activity broadly: Gmail, Drive, YouTube, Search, photo sharing, app downloads, and Sign in with Google can all count. Activity is tied to the account, not a particular device.</p>
+      <div class="label">Proton</div>
+      <p>Any Proton service counts; Proton gives examples such as opening an email, viewing a file, or connecting to a VPN server.</p>
+      <div class="label">Aster</div>
+      <p>Web, desktop, mobile, Bridge, or API activity resets the clock.</p>
+    </article>
+    <article class="card high">
+      <div class="provider">Mailbox access is the signal</div>
+      <div class="label">Tuta</div>
+      <p>Tuta explicitly says a regular <strong>login</strong> is necessary to prevent automatic deletion of free accounts.</p>
+      <div class="label">Zoho</div>
+      <p>Zoho counts mailbox access through webmail, IMAP, POP, desktop client, or mobile app. Activity elsewhere in Zoho does not substitute for Mail activity.</p>
+    </article>
+    <article class="card unspecified">
+      <div class="provider">Not fully enumerated</div>
+      <div class="label">Mailfence / Autistici / Secria</div>
+      <p>The cited official material gives an inactivity threshold but does not fully enumerate every event that resets it. Use an explicit account or mailbox login as the least ambiguous maintenance action.</p>
+    </article>
+    <article class="card safe">
+      <div class="provider">No fixed inactivity deadline located</div>
+      <div class="label">Disroot / Atomic Mail / Murena</div>
+      <p>Disroot explicitly says unused accounts do not expire. Atomic says it has no strict inactivity deletion policy. Murena's published 30-day rule concerns setting and verifying a recovery email, not ordinary inactivity.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="providers">
+  <h2>Provider evidence, one by one</h2>
+  <div class="searchbar no-print">
+    <input type="search" id="cardSearch" placeholder="Search provider details, quotes, sources…" aria-label="Search provider details">
+    <select id="cardRiskFilter" aria-label="Filter provider cards by risk level">
+      <option value="">All risk levels</option>
+      <option value="critical">Critical</option>
+      <option value="high">High</option>
+      <option value="safe">Safe</option>
+      <option value="unspecified">Unspecified</option>
+    </select>
+  </div>
+  <p class="result-count no-print" id="cardCount"></p>
+  <div class="no-results" id="cardNoResults">No providers match your search. Try a different term or clear the filter.</div>
+  <div class="cards">
+    <article class="datacard card critical" data-risk="critical">
+      <div class="card-top">
+        <div>
+          <div class="provider">1. Tuta Mail</div>
+          <div class="domain">tuta.com</div>
+        </div>
+        <span class="badge critical">CRITICAL</span>
+      </div>
+      <div class="limit">6 months</div>
+      <div class="label">Inactivity</div>
+      <p>Official wording is specifically about not logging in for more than six months.</p>
+      <div class="label">What happens</div>
+      <p>Free account is deleted; its contents are permanently deleted. The address is not recycled. The deleted address can still be reused as an alias/user on a paid account if you still have the correct credentials for the deleted account.</p>
+      <div class="label">Best rescue point</div>
+      <p>Before deletion: log in. After deletion: mailbox data are gone; only the address may be reusable on a paid account under Tuta&#x27;s credential requirement.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“Free accounts are deleted if you do not log in for a period longer than six months.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://tuta.com/support/security" target="_blank" rel="noopener">Tuta Support — Security &amp; Privacy</a></div>
+      <div class="source"><strong>Secondary official source:</strong> <a href="https://tuta.com/support" target="_blank" rel="noopener">Tuta Support — Account deletion due to inactivity</a></div>
+      <div class="note"><strong>Note:</strong> Best conservative target: every 5 months.</div>
+    </article>
+    
+    <article class="datacard card critical" data-risk="critical">
+      <div class="card-top">
+        <div>
+          <div class="provider">2. Zoho Mail</div>
+          <div class="domain">zoho.com</div>
+        </div>
+        <span class="badge critical">CRITICAL</span>
+      </div>
+      <div class="limit">180 days (6 months) → 90-day grace</div>
+      <div class="label">Inactivity</div>
+      <p>Mailbox is inactive after 180 consecutive days with no access through web, IMAP, POP, mobile app, or desktop client.</p>
+      <div class="label">What happens</div>
+      <p>At 180 days the mailbox is blocked from sending/receiving and warning notices begin. If you do not reactivate during the following 90 days, mailbox data are permanently deleted at 300 days total.</p>
+      <div class="label">Best rescue point</div>
+      <p>Log in by any supported mailbox access method during the 90-day grace period. After clearance, emails/data cannot be restored.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“A Zoho Mail account is classified as inactive if it remains unused for 180 consecutive days.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://www.zoho.com/mail/help/inactive-account.html" target="_blank" rel="noopener">Zoho Mail — Inactive accounts</a></div>
+      <div class="source"><strong>Secondary official source:</strong> <a href="https://www.zoho.com/mail/help/usage-policy.html" target="_blank" rel="noopener">Zoho Mail — Usage Policy</a></div>
+      <div class="note"><strong>Note:</strong> Do not use the older 120-day figure for a current policy table.</div>
+    </article>
+    
+    <article class="datacard card high" data-risk="high">
+      <div class="card-top">
+        <div>
+          <div class="provider">3. Proton Mail</div>
+          <div class="domain">proton.me</div>
+        </div>
+        <span class="badge high">HIGH</span>
+      </div>
+      <div class="limit">12 months</div>
+      <div class="label">Inactivity</div>
+      <p>Free account must be kept active by signing in and using any Proton service at least once a year. Opening an email, viewing a file, or connecting to a VPN server counts as an example of activity.</p>
+      <div class="label">What happens</div>
+      <p>After 12+ consecutive months of inactivity, Proton may delete the account and associated data. Warnings are sent 30, 15, and 7 days before scheduled deletion.</p>
+      <div class="label">Best rescue point</div>
+      <p>Log in and use a Proton service before deletion. After deletion, associated data are permanently removed; the address generally cannot be recovered.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“Sign in to your Proton Account and use it at least once a year.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://proton.me/support/inactive-accounts" target="_blank" rel="noopener">Proton Support — Inactive accounts</a></div>
+      <div class="source"><strong>Secondary official source:</strong> <a href="https://proton.me/legal/terms" target="_blank" rel="noopener">Proton Terms — Inactive Accounts</a></div>
+      <div class="note"><strong>Note:</strong> The older 24-month grace period for pre-April-9-2024 accounts ceased to apply on April 9, 2026.</div>
+    </article>
+    
+    <article class="datacard card high" data-risk="high">
+      <div class="card-top">
+        <div>
+          <div class="provider">4. Autistici/Inventati</div>
+          <div class="domain">autistici.org</div>
+        </div>
+        <span class="badge high">HIGH</span>
+      </div>
+      <div class="limit">365 days (12 months)</div>
+      <div class="label">Inactivity</div>
+      <p>Official FAQ says accounts not used for 365 days are automatically deactivated. The Terms say A/I reserves the right to delete an account and associated data after inactivity of at least 12 months.</p>
+      <div class="label">What happens</div>
+      <p>The FAQ says an account may be deactivated and can be requested for re-activation. The Terms reserve the right to delete the account and associated data at ≥12 months. The official FAQ does not support a blanket claim that all mailbox data are always immediately erased upon deactivation.</p>
+      <div class="label">Best rescue point</div>
+      <p>If deactivated, the official FAQ says to email support from a different address and ask for re-activation. Do not assume recovery is guaranteed after deletion.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“we automatically deactivate accounts that haven’t been used for 365 days”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://www.autistici.org/docs/faq/faq_mail" target="_blank" rel="noopener">Autistici/Inventati — Mail FAQ</a></div>
+      <div class="source"><strong>Secondary official source:</strong> <a href="https://www.autistici.org/who/policy.it" target="_blank" rel="noopener">Autistici/Inventati — Terms / Policy</a></div>
+      <div class="note"><strong>Note:</strong> This provider distinguishes deactivation from the separate right to delete after ≥12 months.</div>
+    </article>
+    
+    <article class="datacard card high" data-risk="high">
+      <div class="card-top">
+        <div>
+          <div class="provider">5. Mailfence</div>
+          <div class="domain">mailfence.com</div>
+        </div>
+        <span class="badge high">HIGH</span>
+      </div>
+      <div class="limit">7 months → +5 months until permanent deletion</div>
+      <div class="label">Inactivity</div>
+      <p>Free accounts are suspended after seven months of inactivity.</p>
+      <div class="label">What happens</div>
+      <p>The account is then totally deleted five months later. That makes the practical permanent-deletion point about 12 months from last activity.</p>
+      <div class="label">Best rescue point</div>
+      <p>During suspension, Mailfence says you can reactivate by upgrading to a paid plan. After permanent deletion, recovery is not available.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“Free accounts are suspended after 7 months of inactivity and totally deleted 5 months later.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://kb.mailfence.com/kb/why-cant-i-log-in-to-mailfence-account/" target="_blank" rel="noopener">Mailfence Support — Locked / inactive account</a></div>
+      <div class="source"><strong>Secondary official source:</strong> <a href="https://kb.mailfence.com/kb/what-should-i-do-if-my-account-has-been-locked/" target="_blank" rel="noopener">Mailfence Support — Locked or suspended account</a></div>
+      <div class="note"><strong>Note:</strong> Do not describe this simply as &#x27;6 months&#x27;: suspension is 7 months; permanent deletion is 5 months after that.</div>
+    </article>
+    
+    <article class="datacard card safe" data-risk="safe">
+      <div class="card-top">
+        <div>
+          <div class="provider">6. Disroot Mail</div>
+          <div class="domain">disroot.org</div>
+        </div>
+        <span class="badge safe">SAFE</span>
+      </div>
+      <div class="limit">No current inactivity expiration</div>
+      <div class="label">Inactivity</div>
+      <p>Disroot&#x27;s current Terms explicitly say unused accounts do not expire.</p>
+      <div class="label">What happens</div>
+      <p>There is currently no inactivity-triggered deletion deadline. Disroot warns the policy could change if storage pressure forces a change, with advance notice.</p>
+      <div class="label">Best rescue point</div>
+      <p>No inactivity rescue action is currently required. Still maintain your credentials and backups.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“Disroot.org does not expire unused accounts.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://disroot.org/tos" target="_blank" rel="noopener">Disroot — Terms of Service</a></div>
+      
+      <div class="note"><strong>Note:</strong> Current policy: no inactivity expiry; future changes are possible.</div>
+    </article>
+    
+    <article class="datacard card unspecified" data-risk="unspecified">
+      <div class="card-top">
+        <div>
+          <div class="provider">7. Murena Mail</div>
+          <div class="domain">murena.io / e.foundation</div>
+        </div>
+        <span class="badge unspecified">UNSPECIFIED</span>
+      </div>
+      <div class="limit">No published inactivity deadline found</div>
+      <div class="label">Inactivity</div>
+      <p>I found no official Murena rule that says a free Mail/Workspace account is deleted after X months simply because you did not log in.</p>
+      <div class="label">What happens</div>
+      <p>A separate official rule says a newly created Murena Workspace account is disabled and then deleted after 30 days if you do not set and verify a recovery email. That is a recovery-email requirement, not an inactivity timer.</p>
+      <div class="label">Best rescue point</div>
+      <p>Set and verify the recovery email during account creation. Do not misread the 30-day rule as a 30-day inactivity policy.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“After 30 days without setting and verifying a recovery email address your account will be disabled and then deleted”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://doc.e.foundation/create-a-murena-cloud-account" target="_blank" rel="noopener">Murena Documentation — Create a free Murena Workspace account</a></div>
+      
+      <div class="note"><strong>Note:</strong> No fixed inactivity deadline located in current official documentation.</div>
+    </article>
+    
+    <article class="datacard card unspecified" data-risk="unspecified">
+      <div class="card-top">
+        <div>
+          <div class="provider">8. Secria Mail</div>
+          <div class="domain">secria.me</div>
+        </div>
+        <span class="badge unspecified">UNSPECIFIED</span>
+      </div>
+      <div class="limit">2+ years cited as prolonged inactivity</div>
+      <div class="label">Inactivity</div>
+      <p>Current Terms list prolonged inactivity as a ground for suspension/termination, giving &#x27;2+ years without login&#x27; as an example.</p>
+      <div class="label">What happens</div>
+      <p>Secria may suspend or terminate. On termination, access and services cease, and stored data may be deleted. The Terms do not state that deletion automatically occurs exactly at 24 months.</p>
+      <div class="label">Best rescue point</div>
+      <p>Best practice is to log in well before two years; do not treat 24 months as a guaranteed grace period because the wording is discretionary.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“Prolonged inactivity (e.g., 2+ years without login).”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://secria.me/app-tos/" target="_blank" rel="noopener">Secria — Terms of Service</a></div>
+      <div class="source"><strong>Secondary official source:</strong> <a href="https://secria.me/privacy-policy/" target="_blank" rel="noopener">Secria — Privacy Policy</a></div>
+      <div class="note"><strong>Note:</strong> This is an example threshold in a discretionary termination clause, not a hard automatic deletion date.</div>
+    </article>
+    
+    <article class="datacard card safe" data-risk="safe">
+      <div class="card-top">
+        <div>
+          <div class="provider">9. Atomic Mail</div>
+          <div class="domain">atomicmail.io</div>
+        </div>
+        <span class="badge safe">SAFE</span>
+      </div>
+      <div class="limit">No strict inactivity deletion policy</div>
+      <div class="label">Inactivity</div>
+      <p>Atomic Mail currently says it does not have a strict policy for deleting accounts due to inactivity. It recommends logging in at least once a year.</p>
+      <div class="label">What happens</div>
+      <p>No fixed inactivity-based deletion schedule is currently published in its FAQ.</p>
+      <div class="label">Best rescue point</div>
+      <p>No fixed inactivity rescue deadline currently exists in the official FAQ. Still retain your recovery seed phrase and credentials.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“we do not have a strict policy for deleting accounts due to inactivity.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://atomicmail.io/support" target="_blank" rel="noopener">Atomic Mail — Support FAQ</a></div>
+      
+      <div class="note"><strong>Note:</strong> Atomic Mail separately says account deletion itself is irreversible.</div>
+    </article>
+    
+    <article class="datacard card high" data-risk="high">
+      <div class="card-top">
+        <div>
+          <div class="provider">10. Aster Mail</div>
+          <div class="domain">astermail.org</div>
+        </div>
+        <span class="badge high">HIGH</span>
+      </div>
+      <div class="limit">24 months</div>
+      <div class="label">Inactivity</div>
+      <p>Free accounts are treated as inactive after 24 consecutive months without use. Aster counts web, desktop, mobile, Bridge, and API activity.</p>
+      <div class="label">What happens</div>
+      <p>At 24 months, the account is permanently purged. Warnings are sent at 12, 20, and 23 months. The address is permanently retired and not reassigned.</p>
+      <div class="label">Best rescue point</div>
+      <p>Log in/use any supported access method before the 24-month mark. After permanent purge, recovery is not possible.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“If you do not use a free account for twenty-four consecutive months, we treat it as inactive and delete it.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://astermail.org/terms/" target="_blank" rel="noopener">Aster — Terms of Service (updated Aug. 2, 2026)</a></div>
+      
+      <div class="note"><strong>Note:</strong> Current 2026 policy is 24 months, not 90–180 days.</div>
+    </article>
+    
+    <article class="datacard card high" data-risk="high">
+      <div class="card-top">
+        <div>
+          <div class="provider">11. Gmail / Google Account</div>
+          <div class="domain">google.com</div>
+        </div>
+        <span class="badge high">HIGH</span>
+      </div>
+      <div class="limit">2 years</div>
+      <div class="label">Inactivity</div>
+      <p>A personal Google Account is inactive if it has not been used within a two-year period. Activity can include Gmail, Drive, YouTube, Search, sharing photos, app downloads, or Sign in with Google.</p>
+      <div class="label">What happens</div>
+      <p>Google may delete the inactive Google Account and its content/data. Google sends notifications to the account and recovery email before this happens. Separate Google product policies may also apply.</p>
+      <div class="label">Best rescue point</div>
+      <p>Use the specific Google Account before two years elapse. Activity is measured by account, not device.</p>
+      <div class="label">Official quotation</div>
+      <blockquote>“An inactive Google Account is an account that has not been used within a 2-year period.”</blockquote>
+      <div class="source"><strong>Official source:</strong> <a href="https://support.google.com/accounts/answer/12418290?hl=en" target="_blank" rel="noopener">Google Account Help — Inactive Google Account Policy</a></div>
+      
+      <div class="note"><strong>Note:</strong> This is a Google Account rule, not a Gmail-only rule.</div>
+    </article>
+    </div>
+</section>
+
+<section class="section" id="calculator">
+  <h2>Next check-in calculator</h2>
+  <p class="intro">Pick a provider and the date you last logged in. This works out a safe check-in date, well ahead of that provider's real deadline — entirely in your browser, nothing is sent anywhere.</p>
+  <div class="calc">
+    <div>
+      <label for="calcProvider">Provider</label>
+      <select id="calcProvider">
+        <option value="6">Tuta Mail — 6 months</option>
+        <option value="6">Zoho Mail — 6 months (+90d grace)</option>
+        <option value="12">Proton Mail — 12 months</option>
+        <option value="12">Autistici/Inventati — 12 months</option>
+        <option value="7">Mailfence — 7 months (suspension)</option>
+        <option value="9999">Disroot Mail — no fixed deadline</option>
+        <option value="9999">Murena Mail — no published deadline</option>
+        <option value="24">Secria Mail — 2+ years (discretionary)</option>
+        <option value="9999">Atomic Mail — no strict policy</option>
+        <option value="24">Aster Mail — 24 months</option>
+        <option value="24">Gmail / Google Account — 24 months</option>
+        <option value="5">Generic 5-month maintenance rule</option>
+      </select>
+    </div>
+    <div>
+      <label for="calcDate">Last confirmed login</label>
+      <input type="date" id="calcDate">
+    </div>
+    <div class="calc-result" id="calcResult">Choose a provider and date above to see your recommended check-in date.</div>
+  </div>
+</section>
+
+<section class="section" id="strategy">
+  <h2>The rescue strategy</h2>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><h3>Do the check early</h3><p>Use the five-month cycle. Do not deliberately operate on the provider's last day.</p></div></div>
+    <div class="step"><div class="num">2</div><div><h3>Actually sign in</h3><p>Open the mailbox or use the access method the provider explicitly recognizes. This is more reliable than assuming passive incoming mail counts.</p></div></div>
+    <div class="step"><div class="num">3</div><div><h3>If suspended, act immediately</h3><p>Mailfence and Zoho give meaningful post-threshold windows. Use them rather than waiting.</p></div></div>
+    <div class="step"><div class="num">4</div><div><h3>Do not count on recovery after permanent deletion</h3><p>Once data are purged, treat the mailbox as gone. Provider-specific address recovery is not the same thing as restoring the original mailbox contents.</p></div></div>
+    <div class="step"><div class="num">5</div><div><h3>Protect the recovery material</h3><p>Store passwords, recovery codes and—where applicable—seed phrases or recovery mechanisms in a reputable password manager. A forgotten credential can become a separate failure mode.</p></div></div>
+    <div class="step"><div class="num">6</div><div><h3>Back up important correspondence</h3><p>Inactivity protection is not a backup. Autistici explicitly recommends downloading important mail because it does not keep backups of users' emails.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Simple maintenance calendar</h2>
+  <div class="callout">
+    <div class="kicker">One policy for all 11 accounts</div>
+    <div class="big">January → June → November → repeat</div>
+    <p class="warn">At each checkpoint, sign into all accounts and mark the check complete. For a newly started cycle, any fixed three dates roughly five months apart work just as well.</p>
+  </div>
+</section>
+
+<section class="section" id="sources">
+  <h2>Official source index</h2>
+  <div class="sources"><div class="source-card">
+      <strong>Tuta Mail</strong>
+      <a href="https://tuta.com/support/security" target="_blank" rel="noopener">Tuta Support — Security &amp; Privacy</a>
+      <a href="https://tuta.com/support" target="_blank" rel="noopener">Tuta Support — Account deletion due to inactivity</a>
+    </div><div class="source-card">
+      <strong>Zoho Mail</strong>
+      <a href="https://www.zoho.com/mail/help/inactive-account.html" target="_blank" rel="noopener">Zoho Mail — Inactive accounts</a>
+      <a href="https://www.zoho.com/mail/help/usage-policy.html" target="_blank" rel="noopener">Zoho Mail — Usage Policy</a>
+    </div><div class="source-card">
+      <strong>Proton Mail</strong>
+      <a href="https://proton.me/support/inactive-accounts" target="_blank" rel="noopener">Proton Support — Inactive accounts</a>
+      <a href="https://proton.me/legal/terms" target="_blank" rel="noopener">Proton Terms — Inactive Accounts</a>
+    </div><div class="source-card">
+      <strong>Autistici/Inventati</strong>
+      <a href="https://www.autistici.org/docs/faq/faq_mail" target="_blank" rel="noopener">Autistici/Inventati — Mail FAQ</a>
+      <a href="https://www.autistici.org/who/policy.it" target="_blank" rel="noopener">Autistici/Inventati — Terms / Policy</a>
+    </div><div class="source-card">
+      <strong>Mailfence</strong>
+      <a href="https://kb.mailfence.com/kb/why-cant-i-log-in-to-mailfence-account/" target="_blank" rel="noopener">Mailfence Support — Locked / inactive account</a>
+      <a href="https://kb.mailfence.com/kb/what-should-i-do-if-my-account-has-been-locked/" target="_blank" rel="noopener">Mailfence Support — Locked or suspended account</a>
+    </div><div class="source-card">
+      <strong>Disroot Mail</strong>
+      <a href="https://disroot.org/tos" target="_blank" rel="noopener">Disroot — Terms of Service</a>
+      
+    </div><div class="source-card">
+      <strong>Murena Mail</strong>
+      <a href="https://doc.e.foundation/create-a-murena-cloud-account" target="_blank" rel="noopener">Murena Documentation — Create a free Murena Workspace account</a>
+      
+    </div><div class="source-card">
+      <strong>Secria Mail</strong>
+      <a href="https://secria.me/app-tos/" target="_blank" rel="noopener">Secria — Terms of Service</a>
+      <a href="https://secria.me/privacy-policy/" target="_blank" rel="noopener">Secria — Privacy Policy</a>
+    </div><div class="source-card">
+      <strong>Atomic Mail</strong>
+      <a href="https://atomicmail.io/support" target="_blank" rel="noopener">Atomic Mail — Support FAQ</a>
+      
+    </div><div class="source-card">
+      <strong>Aster Mail</strong>
+      <a href="https://astermail.org/terms/" target="_blank" rel="noopener">Aster — Terms of Service (updated Aug. 2, 2026)</a>
+      
+    </div><div class="source-card">
+      <strong>Gmail / Google Account</strong>
+      <a href="https://support.google.com/accounts/answer/12418290?hl=en" target="_blank" rel="noopener">Google Account Help — Inactive Google Account Policy</a>
+      
+    </div></div>
+</section>
+
+<section class="section">
+  <h2>Accuracy notes</h2>
+  <div class="callout">
+    <p><strong>Policy date:</strong> This file reflects official provider material checked on <strong>27 August 2026</strong>.</p>
+    <p><strong>Disroot:</strong> its current Terms explicitly say unused accounts do not expire, although that could change with advance notice.</p>
+    <p><strong>Mailfence:</strong> the correct sequence is seven months to suspension, then five additional months to permanent deletion.</p>
+    <p><strong>Zoho:</strong> the current help page says 180 days of mailbox inactivity followed by a 90-day grace period; the old 120-day figure should not be used for the current policy.</p>
+    <p><strong>Murena:</strong> the cited 30-day rule is about failure to set/verify a recovery email on a newly created Workspace account, not six months of inactivity.</p>
+    <p><strong>Secria:</strong> “2+ years without login” is an example inside a discretionary termination clause, not a guaranteed automatic deletion date.</p>
+    <p><strong>Aster:</strong> current Terms dated August 2, 2026 set the free-account inactivity threshold at 24 consecutive months, with warnings at 12, 20 and 23 months.</p>
+  </div>
+</section>
+
+<div class="footer">Personal reference document · official provider sources only · checked 27 August 2026</div>
+</div>
+
+<button class="totop no-print" id="totop" type="button" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Dark mode ---------- */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  function applyTheme(t){
+    if(t === 'dark'){ root.setAttribute('data-theme','dark'); themeBtn.textContent = '☀️ Light mode'; }
+    else { root.removeAttribute('data-theme'); themeBtn.textContent = '🌙 Dark mode'; }
+  }
+  var stored = null;
+  try { stored = localStorage.getItem('inactivity-guide-theme'); } catch(e){}
+  if(!stored){
+    stored = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
+  applyTheme(stored);
+  themeBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('inactivity-guide-theme', next); } catch(e){}
+  });
+
+  /* ---------- Print ---------- */
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+  /* ---------- Back to top ---------- */
+  var totop = document.getElementById('totop');
+  window.addEventListener('scroll', function(){
+    totop.classList.toggle('show', window.scrollY > 500);
+  });
+  totop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* ---------- Table search + filter ---------- */
+  var tableSearch = document.getElementById('tableSearch');
+  var riskFilter = document.getElementById('riskFilter');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('tr.datarow'));
+  var tableCount = document.getElementById('tableCount');
+  function filterTable(){
+    var q = (tableSearch.value || '').toLowerCase().trim();
+    var risk = riskFilter.value;
+    var shown = 0;
+    rows.forEach(function(row){
+      var text = row.textContent.toLowerCase();
+      var matchesText = !q || text.indexOf(q) !== -1;
+      var matchesRisk = !risk || row.getAttribute('data-risk') === risk;
+      var visible = matchesText && matchesRisk;
+      row.hidden = !visible;
+      if(visible) shown++;
+    });
+    tableCount.textContent = shown + ' of ' + rows.length + ' providers shown';
+  }
+  tableSearch.addEventListener('input', filterTable);
+  riskFilter.addEventListener('change', filterTable);
+  filterTable();
+
+  /* ---------- Provider card search + filter ---------- */
+  var cardSearch = document.getElementById('cardSearch');
+  var cardRiskFilter = document.getElementById('cardRiskFilter');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('article.datacard'));
+  var cardCount = document.getElementById('cardCount');
+  var cardNoResults = document.getElementById('cardNoResults');
+  function filterCards(){
+    var q = (cardSearch.value || '').toLowerCase().trim();
+    var risk = cardRiskFilter.value;
+    var shown = 0;
+    cards.forEach(function(card){
+      var text = card.textContent.toLowerCase();
+      var matchesText = !q || text.indexOf(q) !== -1;
+      var matchesRisk = !risk || card.getAttribute('data-risk') === risk;
+      var visible = matchesText && matchesRisk;
+      card.hidden = !visible;
+      if(visible) shown++;
+    });
+    cardCount.textContent = shown + ' of ' + cards.length + ' providers shown';
+    cardNoResults.style.display = shown === 0 ? 'block' : 'none';
+  }
+  cardSearch.addEventListener('input', filterCards);
+  cardRiskFilter.addEventListener('change', filterCards);
+  filterCards();
+
+  /* ---------- Next check-in calculator ---------- */
+  var calcProvider = document.getElementById('calcProvider');
+  var calcDate = document.getElementById('calcDate');
+  var calcResult = document.getElementById('calcResult');
+  var todayStr = new Date().toISOString().slice(0,10);
+  calcDate.setAttribute('max', todayStr);
+
+  function computeCheckIn(){
+    var months = parseInt(calcProvider.value, 10);
+    var providerLabel = calcProvider.options[calcProvider.selectedIndex].text;
+    if(!calcDate.value){
+      calcResult.innerHTML = 'Choose a provider and date above to see your recommended check-in date.';
+      return;
+    }
+    var last = new Date(calcDate.value + 'T00:00:00');
+    if(isNaN(last.getTime())){ return; }
+
+    if(months >= 9999){
+      calcResult.innerHTML = '<strong>' + providerLabel + '</strong> currently publishes no fixed inactivity deadline. ' +
+        'As general good practice, we still suggest checking in at least once a year, and always keep your recovery details and backups current.';
+      return;
+    }
+
+    var deadline = new Date(last);
+    deadline.setMonth(deadline.getMonth() + months);
+
+    // Recommended check-in: 80% of the way to the deadline (a safety buffer), never later than the deadline itself
+    var totalMs = deadline.getTime() - last.getTime();
+    var safeMs = totalMs * 0.8;
+    var safeDate = new Date(last.getTime() + safeMs);
+
+    var fmt = function(d){ return d.toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'}); };
+
+    var today = new Date();
+    var daysUntilSafe = Math.round((safeDate - today) / 86400000);
+    var urgency = '';
+    if(daysUntilSafe < 0){
+      urgency = '<br><span style="color:var(--red);font-weight:800">This safe check-in date has already passed — log in as soon as possible.</span>';
+    } else if(daysUntilSafe <= 14){
+      urgency = '<br><span style="color:var(--amber);font-weight:800">Only ' + daysUntilSafe + ' day(s) left — log in soon.</span>';
+    }
+
+    calcResult.innerHTML =
+      '<strong>' + providerLabel + '</strong><br>' +
+      'Published deadline from last login: <strong>' + fmt(deadline) + '</strong><br>' +
+      'Recommended safe check-in date (with buffer): <strong>' + fmt(safeDate) + '</strong>' +
+      urgency;
+  }
+  calcProvider.addEventListener('change', computeCheckIn);
+  calcDate.addEventListener('change', computeCheckIn);
+
+  /* ---------- Copy-link buttons for official source links ---------- */
+  document.querySelectorAll('.source-card a, .source a').forEach(function(a){
+    a.addEventListener('contextmenu', function(){}); // no-op, keeps default right-click copy available
+  });
+
+})();
+</script>
+</body>
+</html>
